@@ -2,5 +2,14 @@
 name = "stated-scope-guard"
 version = "0.1.0"
 edition = "2021"
+authors = ["Evian Zhang <evianzhang1999@163.com>"]
+description = "A more flexible RAII pattern for stated resouce management."
+documentation = "https://docs.rs/stated-scope-guard"
+readme = "README.md"
+homepage = "https://github.com/Evian-Zhang/stated-scope-guard"
+repository = "https://github.com/Evian-Zhang/stated-scope-guard"
+license = "MIT OR Apache-2.0"
+keywords = ["RAII", "scope-guard", "error-handling"]
+categories = ["no-std", "rust-patterns"]
 
 [dependencies]

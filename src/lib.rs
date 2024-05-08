@@ -1,8 +1,9 @@
 #![doc = include_str!("../README.md")]
+#![no_std]
 
-pub mod dismissable;
+pub mod dismissible;
 
-use std::ops::{Deref, DerefMut};
+use core::ops::{Deref, DerefMut};
 
 /// Stated scope guard
 pub struct ScopeGuard<T, S, F>
@@ -63,8 +64,8 @@ impl<T, S, F> DerefMut for ScopeGuard<T, S, F>
 where
     F: FnOnce(T, &S),
 {
-    // SAFETY: `value` is always `Some` until dropped
     fn deref_mut(&mut self) -> &mut Self::Target {
+        // SAFETY: `value` is always `Some` until dropped
         unsafe { self.value.as_mut().unwrap_unchecked() }
     }
 }
